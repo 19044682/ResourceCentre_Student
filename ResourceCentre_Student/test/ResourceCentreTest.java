@@ -55,14 +55,14 @@ public class ResourceCentreTest {
 assertNotNull("Test if there is valid Chromebook arraylist to add to", camcorderList);
 		
 		//Given an empty list, after adding 1 item, the size of the list is 1
-		ResourceCentre.addChromebook(chromebookList, cc1);		
+		ResourceCentre.addChromebook(chromebookList, cb1);		
 		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
 		
 		//The item just added is as same as the first item of the list
 		assertSame("Test that Chromebook is added same as 1st item of the list?", cc1, chromebookList.get(0));
 		
 		//Add another item. test The size of the list is 2?
-		ResourceCentre.addChromebook(chromebookList, cc2);
+		ResourceCentre.addChromebook(chromebookList, cb2);
 		assertEquals("Test that Chromebook arraylist size is 2?", 2, chromebookList.size());
 	}
 	
@@ -92,7 +92,8 @@ assertNotNull("Test if there is valid Chromebook arraylist to add to", camcorder
 	}
 	@Test
 	public void retrieveAllChromebookTest() {
-assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+		
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 		
 		//test if the list of chromecorders retrieved from the SourceCentre is empty
 				String allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
@@ -100,8 +101,8 @@ assertNotNull("Test if there is valid Chromebook arraylist to add to", chromeboo
 				assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 				
 		//Given an empty list, after adding 2 items, test if the size of the list is 2
-		ResourceCentre.addChromebook(chromebookList, cc1);
-		ResourceCentre.addChromebook(chromebookList, cc2);
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		ResourceCentre.addChromebook(chromebookList, cb2);
 		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
 		
 		//test if the expected output string same as the list of camcorders retrieved from the SourceCentre
@@ -115,7 +116,7 @@ assertNotNull("Test if there is valid Chromebook arraylist to add to", chromeboo
 	}
 		//fail("Not yet implemented");
 		// write your code here
-	}
+
 
 	@Test
 	public void doLoanCamcorderTest() {
@@ -127,25 +128,18 @@ assertNotNull("Test if there is valid Chromebook arraylist to add to", chromeboo
 	@Test
 	public void doLoanChromebookTest() {
 		//fail("Not yet implemented");
-		// write your code here
 		assertNotNull("Test if there is valid Chromebook arraylist to",chromebookList);
         ResourceCentre.addChromebook(chromebookList, cb1);
-
- 
-
+        
         //Error Occurs
         Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
         assertFalse("Test if available chromebook CC0011 is returned -false" , isReturned);
-
- 
 
         //Normal
         ResourceCentre.addChromebook(chromebookList, cb2);
         cb2.setIsAvailable(false);
         isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
         assertTrue("Test if loaned out chromebook CB0012 is returned -true" , isReturned);
-
- 
 
         //Error Occurs
         isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
