@@ -141,7 +141,7 @@ public class ResourceCentreTest {
 		assertFalse("Test that un-available item is NOT ok to loan?", ok);
 		// error condition
 		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0012", "8-8-2020");
-		assertFalse("Test that non-existing item is NOT ok to loan?", ok);
+		assertFalse("Test that non-existing item is NOT ok to loan", ok);
 		
 		
 	}
