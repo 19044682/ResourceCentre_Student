@@ -183,18 +183,18 @@ public class ResourceCentreTest {
         ResourceCentre.addCamcorder(camcorderList, cc1);
         
         //Error Occurs
-        Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CB0011");
+        Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
         assertFalse("Test if available camcorder CC0011 is returned -false" , isReturned);
 
         //Normal
         ResourceCentre.addCamcorder(camcorderList, cc2);
-        cb2.setIsAvailable(false);
-        isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CB0012");
-        assertTrue("Test if loaned out camcorder CB0012 is returned -true" , isReturned);
+        cc2.setIsAvailable(false);
+        isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0012");
+        assertTrue("Test if loaned out camcorder CC0012 is returned -true" , isReturned);
 
         //Error Occurs
-        isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CB0013");
-        assertFalse("Test if loaned out camcorder CB0013 is returned -false" , isReturned);
+        isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
+        assertFalse("Test if loaned out camcorder CC0013 is returned -false" , isReturned);
 		
 	}
 	@Test
