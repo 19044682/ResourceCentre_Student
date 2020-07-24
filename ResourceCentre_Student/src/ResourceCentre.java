@@ -146,6 +146,9 @@ public class ResourceCentre {
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
 		// write your code here
+		for (int i = 0; i < chromebookList.size(); i++) { 
+			out += String.format(arg0, arg1)
+		}
 		return output;
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
